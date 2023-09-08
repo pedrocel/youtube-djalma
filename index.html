@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Titulo do site -->
+  <title>Titulo do site </title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <script src="https://kit.fontawesome.com/39f9864021.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;1,300&display=swap');
+
+  * {
+
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .container.w-50 {
+    width: 65% !important;
+    /* Largura desejada para o contêiner em telas grandes */
+  }
+
+  .fs-6 {
+    font-size: 0.9rem !important;
+  }
+
+  .profile .img {
+    width: 10%;
+  }
+
+  .profile img {
+    width: 60%;
+    border-radius: 50%;
+  }
+
+  .profile .name {
+    width: 20%;
+    margin-left: 15px;
+    color: #3EA6FF;
+  }
+
+  .profile .name p {
+    font-size: 15px;
+  }
+
+  .profile .escrito {
+    width: 30%;
+    margin-left: 15px;
+    color: #3EA6FF;
+  }
+
+  .profile .escrito p {
+    font-size: 12px;
+  }
+
+  .profile .button-s {
+    width: 40%;
+  }
+
+  .profile .button-s a {
+    background-color: #262626;
+    color: #3EA6FF;
+    font-weight: 600;
+    padding: 8px 25px;
+    text-decoration: none;
+    border-radius: 20px 20px 20px 20px;
+  }
+
+  .title-comentarios {
+    padding: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    border-color: #3F3F3F;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  }
+
+  .title-comentarios p {
+    font-size: 14px;
+
+  }
+
+  .comentarios .img {
+    width: 15%;
+
+    height: 15%;
+  }
+
+  .comentarios .r-img {
+    width: 20%;
+    height: 20%;
+  }
+
+  .comentarios .r-img img {
+    width: 39%;
+    height: 53%;
+    border-radius: 50%;
+
+  }
+
+  .comentarios img {
+    width: 60%;
+    border-radius: 50%;
+  }
+
+  .comentarios .conteudo {
+    width: 100%;
+
+  }
+
+  .comentarios .r-conteudo {
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  .comentarios .box-comentario {
+    border-bottom: 1px solid #3F3F3F;
+    ;
+  }
+
+  .comentarios .temp-comentario {
+    width: 33.33%;
+  }
+
+  /* Estilos para telas menores */
+  @media (max-width: 872px) {
+    .container.w-50 {
+      width: 100% !important;
+      /* O contêiner ocupa 100% da largura em telas menores */
+    }
+
+    .profile img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .profile .name {
+      width: 40%;
+      margin-left: 15px;
+      color: #3EA6FF;
+    }
+  }
+
+  /* @media (max-width: 767px) {
+    .container.w-50 {
+      width: 100% !important;
+    }
+  } */
+</style>
+
+
+<body class="bg-black">
+
+  <div class="container w-50">
+    <header class="text-white pt-3">
+      <div class="d-flex justify-content-end py-2">
+        <ul class="list-unstyled mb-0 d-flex align-items-center" style="padding-right: 40px">
+          <li class="text-light mr-3"><i class="fas fa-search"></i></li>
+          <li class="text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+              viewBox="0 0 24 24" width="48">
+              <path
+                d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+              </path>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="videos">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-12 col-md-12">
+          <div id="vid_64be6c2fc720b5000a44abf3" style="position:relative;width:100%;padding: 56.25% 0 0;"><img
+              id="thumb_64be6c2fc720b5000a44abf3"
+              src="https://images.converteai.net/f6ab40be-ce9c-40c4-b7f2-823913a436f4/players/64be6c2fc720b5000a44abf3/thumbnail.jpg"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <div id="backdrop_64be6c2fc720b5000a44abf3"
+              style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);">
+            </div>
+          </div>
+          <script type="text/javascript"
+            id="scr_64be6c2fc720b5000a44abf3">var s = document.createElement("script"); s.src = "https://scripts.converteai.net/f6ab40be-ce9c-40c4-b7f2-823913a436f4/players/64be6c2fc720b5000a44abf3/player.js", s.async = !0, document.head.appendChild(s);</script>
+        </div>
+      </div>
+    </section>
+
+    <section class="tags">
+      <h2 class="fs-6 text-primary">
+        #hastag1
+        #hastag2
+      </h2>
+    </section>
+
+    <section class="title-video mt-4">
+      <h1 class="fs-5 text-light fw-bold">Titulo do video|<br>
+        subtitulo</h1>
+      <div class="view mt-4">
+        <p class="text-secondary fs-6" id="espectadores">2100<span class="text-light"> ...mais</span></p>
+      </div>
+    </section>
+
+    <section class="profile">
+      <div class="d-flex flex-row align-items-center">
+        <div class="img text-center">
+          <img src="./img/djalma.jpg"
+            alt="" class="img-fluid">
+        </div>
+        <div class="name">
+          <p>Professor Djalma.</p>
+        </div>
+
+        <div class="escrito">
+          <p style="color: #AAAAAA;">735 mil</p>
+        </div>
+
+        <div class="button-s col-md-3 d-flex align-items-center justify-content-end text-end">
+
+          <a href="#">Inscrito</a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="title-comentarios">
+      <div class="row">
+        <div class="col-md-6 col-sm-6  col-6 ">
+          <p class="text-light m-2">Comentários <span style="color: gray;">• 319</span></p>
+        </div>
+        <div class="col-md-6 col-sm-6  col-6  d-flex align-items-center justify-content-end text-end">
+          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" fill="#fff"
+            viewBox="0 0 24 24" width="16">
+            <path
+              d="M12,21.7l-6.4-6.4l0.7-0.7l5.6,5.6l5.6-5.6l0.7,0.7L12,21.7z M18.4,8.6L12,2.3L5.6,8.6l0.7,0.7L12,3.7l5.6,5.6L18.4,8.6z">
+            </path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="comentarios">
+      <div class="box-comentario mt-3">
+        <div class="d-flex flex-row">
+          <div class="img text-center">
+            <!-- Imagem do usuario que deve estar na pasta /img -->
+            <img src="./img/rosto1.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="conteudo text-light">
+            <div class="name mb-1">Nome comentario 01</div>
+            <div class="conteudo-comentario">pergunta comentario 01
+            </div>
+          </div>
+          <div class="temp-comentario text-end text-light">
+            <p class="fs-6">há 40 minutos</p>
+          </div>
+        </div>
+        <div class="row text-light mt-3">
+          <div class="col-md-4 col-sm-4 col-4 like text-center">
+            <p><i class="fa-regular fa-thumbs-up"></i> 30</p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-4 qtd-comentario ">
+            <p><i class="fa-regular fa-comment"></i> 3</p>
+          </div>
+          <div class="col-md-4 col-sm-4  col-4  col-4 config-comentario text-end">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+              viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+              <path
+                d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+              </path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="respostas mt-3">
+          <div class="d-flex flex-row">
+            <div class="r-img text-end">
+              <img src="./img/rosto2.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="r-conteudo text-light">
+              <div class="name mb-1">Resposta 01</div>
+              <div class="conteudo-comentario">
+                Resposta 01 do comentario
+              </div>
+            </div>
+            <div class="temp-comentario text-end text-light">
+              <p class="fs-6">há 25 minutos</p>
+            </div>
+          </div>
+          <div class="row text-light mt-3">
+            <div class="col-md-4 col-sm-4  col-4 like text-end">
+              <p><i class="fa-regular fa-thumbs-up"></i> 10</p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-4 qtd-comentario text-center ">
+              <p><i class="fa-regular fa-comment"></i> </p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-4 config-comentario text-end">
+              <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+                viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+                <path
+                  d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="respostas mt-3">
+          <div class="d-flex flex-row">
+            <div class="r-img text-end">
+              <img src="./img/rosto3.png" alt="" class="img-fluid">
+            </div>
+            <div class="r-conteudo text-light">
+              <div class="name mb-1">Resposta 02</div>
+              <div class="conteudo-comentario">
+                texto da resposta 02
+              </div>
+            </div>
+            <div class="temp-comentario text-end text-light">
+              <p class="fs-6">há 27 minutos</p>
+            </div>
+          </div>
+          <div class="row text-light mt-3">
+            <div class="col-md-4 col-sm-4  col-4   like text-end">
+              <p><i class="fa-regular fa-thumbs-up"></i> 8</p>
+            </div>
+            <div class="col-md-4 col-sm-4  col-4   qtd-comentario text-center ">
+              <p><i class="fa-regular fa-comment"></i> </p>
+            </div>
+            <div class="col-md-4 col-sm-4  col-4   config-comentario text-end">
+              <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+                viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+                <path
+                  d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="respostas mt-3">
+          <div class="d-flex flex-row">
+            <div class="r-img text-end">
+              <img src="./img/rosto4.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="r-conteudo text-light">
+              <div class="name mb-1">Resposta 03</div>
+              <div class="conteudo-comentario">
+                Texto da resposta 03
+              </div>
+            </div>
+            <div class="temp-comentario text-end text-light">
+              <p class="fs-6">há 2 minutos</p>
+            </div>
+          </div>
+          <div class="row text-light mt-3">
+            <div class="col-md-4 col-sm-4  col-4   like text-end">
+              <p><i class="fa-regular fa-thumbs-up"></i> 1</p>
+            </div>
+            <div class="col-md-4 col-sm-4  col-4   qtd-comentario text-center ">
+              <p><i class="fa-regular fa-comment"></i> </p>
+            </div>
+            <div class="col-md-4 col-sm-4  col-4   config-comentario text-end">
+              <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+                viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+                <path
+                  d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-comentario mt-3">
+        <div class="d-flex flex-row">
+          <div class="img text-center">
+            <img src="./img/mariana.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="conteudo text-light">
+            <div class="name mb-1">Comentario teste 2</div>
+            <div class="conteudo-comentario">
+              texto do comentario teste 2</div>
+          </div>
+          <div class="temp-comentario text-end text-light">
+            <p class="fs-6">há 50 minutos</p>
+          </div>
+        </div>
+        <div class="row text-light mt-3">
+          <div class="col-md-4 col-sm-4  col-4   like text-center">
+            <p><i class="fa-regular fa-thumbs-up"></i> 104</p>
+          </div>
+          <div class="col-md-4 col-sm-4  col-4   qtd-comentario ">
+            <p><i class="fa-regular fa-comment"></i></p>
+          </div>
+          <div class="col-md-4 col-sm-4  col-4   config-comentario text-end">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+              viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+              <path
+                d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+              </path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-comentario mt-3">
+        <div class="d-flex flex-row">
+          <div class="img text-center">
+            <img src="./img/edvania.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="conteudo text-light">
+            <div class="name mb-1">Comentario 2</div>
+            <div class="conteudo-comentario">
+              conteudo do comentário 2</div>
+          </div>
+          <div class="temp-comentario text-end text-light">
+            <p class="fs-6">há 28 minutos</p>
+          </div>
+        </div>
+        <div class="row text-light mt-3">
+          <div class="col-md-4 col-sm-4  col-4   like text-center">
+            <p><i class="fa-regular fa-thumbs-up"></i> 72</p>
+          </div>
+          <div class="col-md-4 col-sm-4  col-4   qtd-comentario ">
+            <p><i class="fa-regular fa-comment"></i></p>
+          </div>
+          <div class="col-md-4 col-sm-4  col-4   config-comentario text-end">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+              viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+              <path
+                d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+              </path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-comentario mt-3">
+        <div class="d-flex flex-row">
+          <div class="img text-center">
+            <img src="./img/augosto.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="conteudo text-light">
+            <div class="name mb-1">comentario 3</div>
+            <div class="conteudo-comentario">
+              Texto do comentario 3
+            </div>
+          </div>
+          <div class="temp-comentario text-end text-light">
+            <p class="fs-6">há 2 horas</p>
+          </div>
+        </div>
+        <div class="row text-light mt-3">
+          <div class="col-md-4 col-sm-4  col-4   like text-center">
+            <p><i class="fa-regular fa-thumbs-up"></i> 126</p>
+          </div>
+          <div class="col-md-4 col-sm-4  col-4   qtd-comentario ">
+            <p><i class="fa-regular fa-comment"></i>1</p>
+          </div>
+          <div class="col-md-4 col-sm-4  col-4   config-comentario text-end">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+              viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+              <path
+                d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+              </path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="respostas mt-3">
+          <div class="d-flex flex-row">
+            <div class="r-img text-end">
+              <img src="./img/regina.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="r-conteudo text-light">
+              <div class="name mb-1">titulo resposta comentario</div>
+              <div class="conteudo-comentario">
+                texto resposta comentario
+
+              </div>
+            </div>
+            <div class="temp-comentario text-end text-light">
+              <p class="fs-6">há 32 minutos</p>
+            </div>
+          </div>
+          <div class="row text-light mt-3">
+            <div class="col-md-4 col-sm-4  col-4   like text-end">
+              <p><i class="fa-regular fa-thumbs-up"></i> 44</p>
+            </div>
+            <div class="col-md-4 col-sm-4  col-4   qtd-comentario text-center ">
+              <p><i class="fa-regular fa-comment"></i> </p>
+            </div>
+            <div class="col-md-4 col-sm-4  col-4   config-comentario text-end">
+              <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" fill="#fff" height="24"
+                viewBox="0 0 24 24" width="48" style="padding-left: 24px;">
+                <path
+                  d="M12,16.5c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5S11.17,16.5,12,16.5z M10.5,12 c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5s-0.67-1.5-1.5-1.5S10.5,11.17,10.5,12z M10.5,6c0,0.83,0.67,1.5,1.5,1.5 s1.5-0.67,1.5-1.5S12.83,4.5,12,4.5S10.5,5.17,10.5,6z">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    const likeButtons = document.querySelectorAll('.like p');
+    let isLiked = false;
+    let likeCount = 1;
+    likeButtons.forEach(likeButton => {
+
+      likeButton.addEventListener('click', () => {
+        const currentLikeCount = parseInt(likeButton.textContent.trim());
+
+        if (!likeButton.classList.contains('liked')) {
+          likeButton.innerHTML = `<i class="fas fa-thumbs-up liked" style='color:red;'></i> ${likeCount + currentLikeCount}`;
+          likeButton.classList.toggle('liked');
+        } else {
+          likeButton.classList.remove('liked')
+          likeButton.innerHTML = `<i class="far fa-thumbs-up"></i> ${currentLikeCount - likeCount}`;
+        }
+      });
+    });
+  </script>
+  <script>
+    function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    function atualizarEspectadores() {
+        const espectadoresElement = document.getElementById('espectadores');
+        let espectadores = parseInt(espectadoresElement.textContent);
+        
+        const incrementoAleatorio = getRandom(1, 20);
+        espectadores += incrementoAleatorio;
+        
+        espectadoresElement.textContent = `${espectadores} assistindo agora`;
+
+        setTimeout(atualizarEspectadores, 5000);
+    }
+    atualizarEspectadores();
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
