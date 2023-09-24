@@ -168,6 +168,24 @@
 
 <body class="bg-black">
 
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1335464613728700');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1335464613728700&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
   <div class="container w-50">
     <header class="text-white pt-3">
       <div class="d-flex justify-content-end py-2">
@@ -557,25 +575,59 @@
     crossorigin="anonymous"></script>
 
 
-    <!-- Script utm -->  
+    <!-- Script utm hotmart -->  
   <script>
-(function() {
-     const utmParamQueryString = new URLSearchParams(window.location.search);
-     if (utmParamQueryString.toString()) {
-          var navLinks = document.querySelectorAll('a');
-          navLinks.forEach(function(item) {
-               if (item.href.indexOf('seuguiasaudavel.com/ef-pagamento-01','seuguiasaudavel.com/ef-pagamento-02') !== -1) {
-                    if (item.href.indexOf('?') === -1) {
-                         item.href += '?' + utmParamQueryString.toString();
-                    } else {
-                         item.href += '&' + utmParamQueryString.toString();
-                    }
-               }
-          });
-     }
-})();
+
+    let prefix = ["https://pay.hotmart.com/D75042470X?off=sxi1lkhv&checkoutMode=10", "https://pay.hotmart.com"];
+
+ 
+
+function getParams() {
+
+    let t = "",
+
+        e = window.top.location.href,
+
+        r = new URL(e);
+
+    if (null != r) {
+
+        let a = r.searchParams.get("utm_source"),
+
+            n = r.searchParams.get("utm_medium"),
+
+            o = r.searchParams.get("utm_campaign"),
+
+            m = r.searchParams.get("utm_term"),
+
+            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+
+    }
+
+    return t
+
+}! function() {
+
+    var t = new URLSearchParams(window.location.search);
+
+    t.toString() && document.querySelectorAll("a").forEach(function(e) {
+
+        for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+
+    })
+
+}();
+
 </script>
 
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "bvja0ho7b8");
+</script>
   
 </body>
 
